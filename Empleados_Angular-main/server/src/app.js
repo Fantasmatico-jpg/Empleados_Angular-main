@@ -8,3 +8,4 @@ app.use("/api/employees", require("./routes/employees.routes"));
 module.exports = app;
 
 
+// API REST de empleados desarrollada con Node.js, Express y MongoDB
