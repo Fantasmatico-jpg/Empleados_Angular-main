@@ -1,21 +1,12 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const employeeSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    position: {
-        type: String,
-        required: true
-    },
-    salary: {
-        type: Number,
-        required: true
-    }, 
-    
-   
-}
-);
+const EmployeeSchema = new Schema({
+  name: { type: String, required: true },
+  office: { type: String, default: "" },
+  position: { type: String, required: true },
+  salary: { type: Number, required: true }
+}, {
+  timestamps: true
+});
 
-module.exports = mongoose.model("Employee", employeeSchema);
+module.exports = model("Employee", EmployeeSchema);

@@ -8,9 +8,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 
-app.set('port', process.env.PORT || 3000);
-
-
 app.use('/api/employees', require('./routes/employees.routes'));
 
 module.exports = app;
