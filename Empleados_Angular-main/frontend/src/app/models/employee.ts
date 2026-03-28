@@ -1,9 +1,9 @@
 export interface Employee {
+  _id?: string;
   name: string;
   office: string;
   position: string;
   salary: number;
-  createdAt: Date;
-  updatedAt: Date;
-  _id?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

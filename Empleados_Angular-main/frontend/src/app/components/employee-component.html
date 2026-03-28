@@ -1,0 +1,35 @@
+<h2>Empleados</h2>
+
+<form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+  <input type="hidden" name="_id" [(ngModel)]="employee._id">
+
+  <input type="text" name="name" placeholder="Nombre" [(ngModel)]="employee.name" required>
+  <input type="text" name="office" placeholder="Oficina" [(ngModel)]="employee.office" required>
+  <input type="text" name="position" placeholder="Posición" [(ngModel)]="employee.position" required>
+  <input type="number" name="salary" placeholder="Salario" [(ngModel)]="employee.salary" required>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<hr>
+
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Oficina</th>
+    <th>Posición</th>
+    <th>Salario</th>
+    <th>Acciones</th>
+  </tr>
+
+  <tr *ngFor="let emp of employeeService.employee">
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.office }}</td>
+    <td>{{ emp.position }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>
+      <button (click)="editEmployee(emp)">Editar</button>
+      <button (click)="deleteEmployee(emp._id!)">Eliminar</button>
+    </td>
+  </tr>
+</table>
