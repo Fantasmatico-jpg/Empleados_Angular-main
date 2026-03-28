@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 import { Employee } from '../models/employee';
-import { EmployeeService } from '../service/employee-service'; // 👈 CORREGIDO
+import { EmployeeService } from '../service/employee-service'; 
 
 @Component({
   selector: 'app-employee-component',
