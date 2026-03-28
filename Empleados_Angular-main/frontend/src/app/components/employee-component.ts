@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 import { Employee } from '../models/employee';
-import { EmployeeService } from '../service/employee-service';
+import { EmployeeService } from '../service/employee-service'; // 👈 CORREGIDO
 
 @Component({
   selector: 'app-employee-component',
   standalone: true,
   imports: [FormsModule, CommonModule], 
   templateUrl: './employee-component.html'
-  
 })
 export class EmployeeComponent implements OnInit {
 
@@ -60,5 +59,3 @@ export class EmployeeComponent implements OnInit {
     this.employee = employee;
   }
 }
-
-
