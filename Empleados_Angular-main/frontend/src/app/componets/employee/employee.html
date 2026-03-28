@@ -1,0 +1,60 @@
+<div class="row">
+
+  <!-- FORMULARIO -->
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+
+        <h4>Formulario</h4>
+
+        <input [(ngModel)]="employee.name" placeholder="Nombre" class="form-control mb-2">
+        <input [(ngModel)]="employee.office" placeholder="Oficina" class="form-control mb-2">
+        <input [(ngModel)]="employee.position" placeholder="Cargo" class="form-control mb-2">
+        <input [(ngModel)]="employee.salary" type="number" placeholder="Salario" class="form-control mb-2">
+
+       
+        <button class="btn btn-success w-100" (click)="saveEmployee()">
+          {{ employee._id ? 'ACTUALIZAR' : 'GUARDAR' }}
+        </button>
+
+       
+        <button class="btn btn-secondary w-100 mt-2" (click)="resetForm()">
+          NUEVO EMPLEADO
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="col-md-8">
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Oficina</th>
+          <th>Cargo</th>
+          <th>Salario</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.office || '-' }}</td>
+          <td>{{ emp.position }}</td>
+          <td>{{ emp.salary }}</td>
+
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="editEmployee(emp)">EDITAR</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp._id)">ELIMINAR</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</div>
